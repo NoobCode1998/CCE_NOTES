@@ -9,16 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".TeacherDetailsCategory"></activity>
+        <activity android:name=".StudentDetailsCategory" />
+        <activity android:name=".StudentTeacherCategory" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name=".MainActivity" />
-                <category android:name="android.intent.category.DEFAULT"/>
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".SplashScreen"
+        <activity
+            android:name=".SplashScreen"
             android:screenOrientation="portrait"
             android:theme="@style/splash_theme">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
