@@ -15,7 +15,10 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".SplashScreen">
+        <activity android:name=".SplashScreen"
+            android:screenOrientation="portrait"
+            android:theme="@style/splash_theme">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
