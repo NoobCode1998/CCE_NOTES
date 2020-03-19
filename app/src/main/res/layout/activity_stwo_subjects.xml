@@ -81,6 +81,12 @@
             android:layout_height="wrap_content"
             android:text="CHEMISTRY" />
 
+        <Button
+            android:id="@+id/button74s32"
+            style="@style/button_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GRAPHICS" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
