@@ -9,9 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TeacherDetailsCategory"></activity>
-        <activity android:name=".StudentDetailsCategory" />
-        <activity android:name=".StudentTeacherCategory" />
+        <activity android:name=".ListViewStudent"></activity>
+        <activity
+            android:name=".TeacherDetailsCategory"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".StudentDetailsCategory"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".StudentTeacherCategory"
+            android:screenOrientation="portrait" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name=".MainActivity" />
