@@ -29,7 +29,6 @@
             android:text="BASICS OF ELECTRICAL" />
 
         <Button
-            android:background="@drawable/splash_gradient"
             style="@style/button_theme"
             android:id="@+id/button3"
             android:layout_width="match_parent"

@@ -14,9 +14,9 @@
     <style name="button_theme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:textColor">#fff</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:background">@drawable/splash_gradient</item>
+        <item name="android:background">@drawable/gradient_button</item>
         <item name="android:layout_margin">5dp</item>
-        <item name="android:radius">5dp</item>
+        <item name="android:radius">100dp</item>
     </style>
 
 
