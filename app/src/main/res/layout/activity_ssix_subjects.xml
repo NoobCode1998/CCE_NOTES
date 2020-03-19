@@ -4,6 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/splash_gradient"
     tools:context=".SSixSubjects">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25">
+
+        <Button
+            android:id="@+id/button67"
+            style="@style/button_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BASICS OF ELECTRICAL" />
+
+        <Button
+            android:background="@drawable/splash_gradient"
+            style="@style/button_theme"
+            android:id="@+id/button367"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BASICS OF ELECTRONICS" />
+
+        <Button
+            style="@style/button_theme"
+            android:id="@+id/button467"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PHYSICS" />
+
+        <Button
+            android:id="@+id/button567"
+            style="@style/button_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MATHEMATICS" />
+
+        <Button
+            android:id="@+id/button667"
+            style="@style/button_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="COMPUTER PROGRAMING" />
+
+        <Button
+            android:id="@+id/button767"
+            style="@style/button_theme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MECHANICS" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
