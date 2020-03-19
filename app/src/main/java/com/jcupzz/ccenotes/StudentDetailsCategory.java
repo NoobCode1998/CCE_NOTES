@@ -36,7 +36,37 @@ public class StudentDetailsCategory extends AppCompatActivity {
         btn_s2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            
+
+        Intent s2intent = new Intent(StudentDetailsCategory.this,STwoSubjects.class);
+        startActivity(s2intent);
+
+            }
+        });
+        btn_s4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent s4intent = new Intent(StudentDetailsCategory.this,SFourSubjects.class);
+                startActivity(s4intent);
+
+            }
+        });
+        btn_s6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent s6intent = new Intent(StudentDetailsCategory.this,SSixSubjects.class);
+                startActivity(s6intent);
+
+            }
+        });
+        btn_s8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent s8intent = new Intent(StudentDetailsCategory.this,SEightSubjects.class);
+                startActivity(s8intent);
+
             }
         });
 
