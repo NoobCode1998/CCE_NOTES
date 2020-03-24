@@ -9,17 +9,17 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class STwoSubjects extends AppCompatActivity implements View.OnClickListener{
-
-    Button s2_btn_physics;
-    Button s2_btn_chemistry;
-    Button s2_btn_graphics;
-    Button s2_btn_basics_of_mechanics;
-    Button s2_btn_basics_of_electrical;
-    Button s2_btn_basics_of_electronics;
-    Button s2_btn_mathematics;
-    Button s2_btn_cs;
-    Button s2_btn_basics_of_mechanical;
-    Button s2_btn_basics_of_civil;
+public static String var;
+    public static Button s2_btn_physics;
+    public static Button s2_btn_chemistry;
+    public static Button s2_btn_graphics;
+    public static Button s2_btn_basics_of_mechanics;
+    public static Button s2_btn_basics_of_electrical;
+    public static Button s2_btn_basics_of_electronics;
+    public static Button s2_btn_mathematics;
+    public static Button s2_btn_cs;
+    public static Button s2_btn_basics_of_mechanical;
+    public static Button s2_btn_basics_of_civil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,14 +60,36 @@ public class STwoSubjects extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
         switch (v.getId()) {
             case R.id.s2_btn_physics:
-                intent.putExtra("getphy", "Physics");
+                var = "Physics";
                 break;
             case R.id.s2_btn_chemistry:
-                intent.putExtra("getchem", "Chemistry");
+                var = "Chemistry";
                 break;
             case R.id.s2_btn_graphics:
-                intent.putExtra("getgraphics", "Graphics");
+                var = "Graphics";
                 break;
+            case R.id.s2_btn_basics_of_mechanics:
+                var = "Mechanics";
+                break;
+            case R.id.s2_btn_basics_of_mechanical:
+                var = "Mechanical";
+                break;
+            case R.id.s2_btn_basics_of_civil:
+                var = "Civil";
+                break;
+            case R.id.s2_btn_cs:
+                var = "Cs";
+                break;
+            case R.id.s2_btn_mathematics:
+                var = "Mathematics";
+                break;
+            case R.id.s2_btn_basics_of_electrical:
+                var = "Electrical";
+                break;
+            case R.id.s2_btn_basics_of_electronics:
+                var = "Electronics";
+                break;
+
         }
 
         }

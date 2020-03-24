@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     ArrayList<DownModel> downModelArrayList = new ArrayList<>();
     MyAdapter myAdapter;
-    String var;
 
 
 
@@ -38,13 +37,47 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    Intent intent = getIntent();
-    Toast.makeText(MainActivity.this,var,Toast.LENGTH_SHORT).show();
+
+
+
+
+        /*
+        if(STwoSubjects.s2_btn_physics.isPressed())
+        {
+            var = "Physics";
+        }
+        if(STwoSubjects.s2_btn_chemistry.isPressed()) {
+            var = "Chemistry";
+        }
+        if(STwoSubjects.s2_btn_graphics.isPressed()){
+            var="Graphics";
+        }
+        if(STwoSubjects.s2_btn_basics_of_mechanics.isPressed()){
+            var="Mechanics";
+        }
+        if(STwoSubjects.s2_btn_basics_of_mechanical.isPressed()){
+            var="Mechanical";
+        }
+        if(STwoSubjects.s2_btn_basics_of_electrical.isPressed()){
+            var="Electrical";
+        }
+        if(STwoSubjects.s2_btn_basics_of_electronics.isPressed()){
+            var="Electronics";
+        }
+        if(STwoSubjects.s2_btn_mathematics.isPressed()){
+            var="Mathematics";
+        }
+        if(STwoSubjects.s2_btn_cs.isPressed()){
+            var="Cs";
+        }
+        if(STwoSubjects.s2_btn_basics_of_civil.isPressed()){
+            var="Civil";
+        }
+*/
 
         setUpFB();
         setUpRV();
         dataFromFirebase();
-
 
 
     }
@@ -56,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         //db=FirebaseFirestore.getInstance();
 
 
-db.collection("Physics")
+db.collection(STwoSubjects.var)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
