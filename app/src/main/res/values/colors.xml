@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#185A9D</color>
     <color name="colorAccent">#D81B60</color>
     <color name="cyan">#00FFFF</color>
+    <color name="start">#43cea2</color>
+    <color name="end">#185a9d</color>
 </resources>

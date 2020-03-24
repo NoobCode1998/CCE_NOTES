@@ -19,5 +19,13 @@
         <item name="android:radius">100dp</item>
     </style>
 
+    <style name="card" parent="CardView">
+        <item name="android:startColor">#34e89e</item>
+        <item name="android:endColor">#0f3443</item>
+        <item name="cardCornerRadius">999dp</item>
+        <item name="cardBackgroundColor">@color/end</item>
+
+    </style>
+
 
 </resources>

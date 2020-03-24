@@ -1,4 +1,16 @@
 <resources>
     <string name="app_name">CCE NOTES</string>
     <string name="cce_notes">CCE NOTES</string>
+    <string name="name">Name</string>
+    <string name="physics">PHYSICS</string>
+    <string name="chemistry">CHEMISTRY</string>
+    <string name="mechanics">MECHANICS</string>
+    <string name="graphics">GRAPHICS</string>
+    <string name="mathematics">MATHEMATICS</string>
+    <string name="basics_of_electrical">BASICS OF ELECTRICAL</string>
+    <string name="basics_of_electronics">BASICS OF ELECTRONICS</string>
+    <string name="basics_of_mechanical">BASICS OF MECHANICAL</string>
+    <string name="basics_of_civil">BASICS OF CIVIL</string>
+    <string name="computer_programing">COMPUTER PROGRAMING</string>
+
 </resources>

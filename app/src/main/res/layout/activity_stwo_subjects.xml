@@ -31,74 +31,74 @@
                 android:orientation="vertical" >
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/s2_btn_physics"
                     style="@style/button_theme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="PHYSICS" />
+                    android:text="@string/physics" />
 
                 <Button
-                    android:id="@+id/button7432"
+                    android:id="@+id/s2_btn_chemistry"
                     style="@style/button_theme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="CHEMISTRY" />
+                    android:text="@string/chemistry" />
 
                 <Button
-                    android:id="@+id/button7"
+                    android:id="@+id/s2_btn_basics_of_mechanics"
                     style="@style/button_theme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="MECHANICS" />
+                    android:text="@string/mechanics" />
 
                 <Button
-                    android:id="@+id/button74s32"
+                    android:id="@+id/s2_btn_graphics"
                     style="@style/button_theme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="GRAPHICS" />
+                    android:text="@string/graphics" />
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/s2_btn_mathematics"
                     style="@style/button_theme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="MATHEMATICS" />
+                    android:text="@string/mathematics" />
 
                 <Button
-                    android:id="@+id/button6"
+                    android:id="@+id/s2_btn_cs"
                     style="@style/button_theme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="COMPUTER PROGRAMING" />
+                    android:text="@string/computer_programing" />
 
                 <Button
-                    android:id="@+id/button1234"
+                    android:id="@+id/s2_btn_basics_of_civil"
                     style="@style/button_theme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="BASICS OF CIVIL" />
+                    android:text="@string/basics_of_civil" />
 
                 <Button
-                    android:id="@+id/button72345"
+                    android:id="@+id/s2_btn_basics_of_mechanical"
                     style="@style/button_theme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="BASICS OF MECHANICAL" />
+                    android:text="@string/basics_of_mechanical" />
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/s2_btn_basics_of_electronics"
                     style="@style/button_theme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="BASICS OF ELECTRONICS" />
+                    android:text="@string/basics_of_electronics" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/s2_btn_basics_of_electrical"
                     style="@style/button_theme"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="BASICS OF ELECTRICAL" />
+                    android:text="@string/basics_of_electrical" />
             </LinearLayout>
         </ScrollView>
 
