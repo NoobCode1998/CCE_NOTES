@@ -15,6 +15,7 @@ public static Button b_b_civil;
     public static  Button b_b_electronics;
     public static  Button b_b_cs;
     public static  Button b_b_mechanical;
+    public static int j;
     Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +49,34 @@ public static Button b_b_civil;
         if(StudentDetailsCategory.i==1) {
             Intent ins = new Intent(StudentBranchCategory.this, SFourSubjects.class);
             startActivity(ins);
+            switch (v.getId())
+            {
+                case R.id.b_b_id_civil:
+                    j=1;
+                    break;
+                case R.id.b_b_id_cs:
+                    j=2;
+                    break;
+                case R.id.b_b_id_electrical:
+                    j=3;
+                    break;
+                case R.id.b_b_id_electronics:
+                    j=4;
+                    break;
+                case R.id.b_b_id_mechanical:
+                    j=5;
+                    break;
+            }
         }
         if(StudentDetailsCategory.i==2) {
             Intent ins = new Intent(StudentBranchCategory.this, SSixSubjects.class);
             startActivity(ins);
+
         }
         if(StudentDetailsCategory.i==3) {
             Intent ins = new Intent(StudentBranchCategory.this, SEightSubjects.class);
             startActivity(ins);
+
         }
 }
 

@@ -37,6 +37,7 @@ btn_s2.setOnClickListener(new View.OnClickListener() {
     public void onClick(View v) {
         Intent s2 = new Intent(StudentDetailsCategory.this,STwoSubjects.class);
         startActivity(s2);
+        i=0;
     }
 });
         btn_s4.setOnClickListener(new View.OnClickListener() {
