@@ -21,35 +21,35 @@
         app:layout_constraintVertical_bias="0.050000012">
 
         <Button
-            android:id="@+id/button62323"
+            android:id="@+id/b_b_id_civil"
             style="@style/button_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="CIVIL ENGINEERING" />
 
         <Button
-            android:id="@+id/button42323"
+            android:id="@+id/b_b_id_electrical"
             style="@style/button_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ELECTRICAL ENGINEERING" />
 
         <Button
-            android:id="@+id/button5232"
+            android:id="@+id/b_b_id_electronics"
             style="@style/button_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ELECTRONICS ENGINEERING" />
 
         <Button
-            android:id="@+id/button3233"
+            android:id="@+id/b_b_id_mechanical"
             style="@style/button_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="MECHANICAL ENGINEERING" />
 
         <Button
-            android:id="@+id/button233"
+            android:id="@+id/b_b_id_cs"
             style="@style/button_theme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

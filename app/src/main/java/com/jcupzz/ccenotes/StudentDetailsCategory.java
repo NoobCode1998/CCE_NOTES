@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudentDetailsCategory extends AppCompatActivity {
-    ImageButton btn_s2,btn_s4,btn_s6,btn_s8;
+    public static Button btn_s2,btn_s4,btn_s6,btn_s8;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

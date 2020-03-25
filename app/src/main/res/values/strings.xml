@@ -12,5 +12,9 @@
     <string name="basics_of_mechanical">BASICS OF MECHANICAL</string>
     <string name="basics_of_civil">BASICS OF CIVIL</string>
     <string name="computer_programing">COMPUTER PROGRAMING</string>
+    <string name="s2">S2</string>
+    <string name="s4">S4</string>
+    <string name="s6">S6</string>
+    <string name="s8">S8</string>
 
 </resources>

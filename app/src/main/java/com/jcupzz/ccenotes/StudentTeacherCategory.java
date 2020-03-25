@@ -15,9 +15,6 @@ ImageButton stu_btn,teachers_btn;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_teacher_category);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_gradient));
-
 
         stu_btn = findViewById(R.id.student_category_btn);
         teachers_btn=findViewById(R.id.teacher_category_btn);

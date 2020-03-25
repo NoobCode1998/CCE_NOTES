@@ -39,42 +39,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
-
-        /*
-        if(STwoSubjects.s2_btn_physics.isPressed())
-        {
-            var = "Physics";
-        }
-        if(STwoSubjects.s2_btn_chemistry.isPressed()) {
-            var = "Chemistry";
-        }
-        if(STwoSubjects.s2_btn_graphics.isPressed()){
-            var="Graphics";
-        }
-        if(STwoSubjects.s2_btn_basics_of_mechanics.isPressed()){
-            var="Mechanics";
-        }
-        if(STwoSubjects.s2_btn_basics_of_mechanical.isPressed()){
-            var="Mechanical";
-        }
-        if(STwoSubjects.s2_btn_basics_of_electrical.isPressed()){
-            var="Electrical";
-        }
-        if(STwoSubjects.s2_btn_basics_of_electronics.isPressed()){
-            var="Electronics";
-        }
-        if(STwoSubjects.s2_btn_mathematics.isPressed()){
-            var="Mathematics";
-        }
-        if(STwoSubjects.s2_btn_cs.isPressed()){
-            var="Cs";
-        }
-        if(STwoSubjects.s2_btn_basics_of_civil.isPressed()){
-            var="Civil";
-        }
-*/
-
         setUpFB();
         setUpRV();
         dataFromFirebase();
