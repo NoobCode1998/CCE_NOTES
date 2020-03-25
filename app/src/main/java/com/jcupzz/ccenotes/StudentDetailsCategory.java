@@ -17,8 +17,9 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentDetailsCategory extends AppCompatActivity {
+public class StudentDetailsCategory extends AppCompatActivity  {
     public static Button btn_s2,btn_s4,btn_s6,btn_s8;
+    public static int i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,47 +30,42 @@ public class StudentDetailsCategory extends AppCompatActivity {
         btn_s6 = findViewById(R.id.img_id_s6);
         btn_s8 = findViewById(R.id.img_id_s8);
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_gradient));
 
 
-        btn_s2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-        Intent s2intent = new Intent(StudentDetailsCategory.this,STwoSubjects.class);
-        startActivity(s2intent);
-
-            }
-        });
+btn_s2.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent s2 = new Intent(StudentDetailsCategory.this,STwoSubjects.class);
+        startActivity(s2);
+    }
+});
         btn_s4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent s4intent = new Intent(StudentDetailsCategory.this,StudentBranchCategory.class);
-                startActivity(s4intent);
-
+i=1;
+                Intent s24 = new Intent(StudentDetailsCategory.this,StudentBranchCategory.class);
+                startActivity(s24);
             }
         });
         btn_s6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent s6intent = new Intent(StudentDetailsCategory.this,StudentBranchCategory.class);
-                startActivity(s6intent);
-
+    i=2;
+                Intent s26 = new Intent(StudentDetailsCategory.this,StudentBranchCategory.class);
+                startActivity(s26);
             }
         });
         btn_s8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent s8intent = new Intent(StudentDetailsCategory.this,StudentBranchCategory.class);
-                startActivity(s8intent);
-
+        i=3;
+                Intent s28 = new Intent(StudentDetailsCategory.this,StudentBranchCategory.class);
+                startActivity(s28);
             }
         });
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_gradient));
 
 
     }
