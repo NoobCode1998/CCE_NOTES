@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StudentBranchCategory"></activity>
+        <activity android:name=".AboutUs"></activity>
         <activity android:name=".SEightSubjects" />
         <activity android:name=".SSixSubjects" />
         <activity android:name=".SFourSubjects" />

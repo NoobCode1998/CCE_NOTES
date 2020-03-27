@@ -7,60 +7,62 @@
     android:background="@drawable/splash_gradient"
     tools:context=".SSixSubjects">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:gravity="center"
-        android:orientation="vertical"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.050000012">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/button67"
-            style="@style/button_theme"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ANY SUBJECTS" />
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button367"
-            style="@style/button_theme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="BASICS OF ELECTRONICS" />
+            <Button
+                android:id="@+id/s6_btn_CD_id"
+                style="@style/button_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Compiler Design" />
 
-        <Button
-            android:id="@+id/button467"
-            style="@style/button_theme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="PHYSICS" />
+            <Button
+                android:id="@+id/s6_btn_CN_id"
+                style="@style/button_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Computer Networks" />
 
-        <Button
-            android:id="@+id/button567"
-            style="@style/button_theme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="MATHEMATICS" />
+            <Button
+                android:id="@+id/s6_btn_WT_id"
+                style="@style/button_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Web Technology" />
 
-        <Button
-            android:id="@+id/button667"
-            style="@style/button_theme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="COMPUTER PROGRAMING" />
+            <Button
+                android:id="@+id/s6_btn_POM_id"
+                style="@style/button_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Principles of Management" />
 
-        <Button
-            android:id="@+id/button767"
-            style="@style/button_theme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="MECHANICS" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/s6_btn_DAAOA_id"
+                style="@style/button_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Design and Analysis of Algorithms" />
+
+            <Button
+                android:id="@+id/s6_btn_SEAPM_id"
+                style="@style/button_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Software Engineering and Project Management" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

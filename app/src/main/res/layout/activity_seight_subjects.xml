@@ -7,60 +7,61 @@
     android:layout_height="match_parent"
     tools:context=".SEightSubjects">
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:gravity="center"
-        android:orientation="vertical"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.050000012">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/button289"
-            style="@style/button_theme"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ANYS8SUBJECTS" />
+            android:orientation="vertical" >
 
-        <Button
-            android:id="@+id/button389"
-            style="@style/button_theme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="BASICS OF ELECTRONICS" />
+            <Button
+                android:id="@+id/s8_btn_DM_id"
+                style="@style/button_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Data Mining" />
 
-        <Button
-            android:id="@+id/button489"
-            style="@style/button_theme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="PHYSICS" />
+            <Button
+                android:id="@+id/s8_btn_FST_id"
+                style="@style/button_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Fuzzy Set Theory" />
 
-        <Button
-            android:id="@+id/button589"
-            style="@style/button_theme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="MATHEMATICS" />
+            <Button
+                android:id="@+id/s8_btn_CC_id"
+                style="@style/button_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cloud Computing" />
 
-        <Button
-            android:id="@+id/button689"
-            style="@style/button_theme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="COMPUTER PROGRAMING" />
+            <Button
+                android:id="@+id/s8_btn_ES_id"
+                style="@style/button_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Embedded Systems" />
 
-        <Button
-            android:id="@+id/button789"
-            style="@style/button_theme"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="MECHANICS" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/s8_btn_AI_id"
+                style="@style/button_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Artificial Intelligence" />
+
+            <Button
+                android:id="@+id/s8_btn_POIS_id"
+                style="@style/button_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Principles of Information Security" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

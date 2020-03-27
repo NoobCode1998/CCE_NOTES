@@ -7,8 +7,7 @@
     android:background="@drawable/splash_gradient"
     tools:context=".SFourSubjects">
 
-    <ListView
-        android:id="@+id/listview_id"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -16,5 +15,67 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-    </ListView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/s4_btn_maths_id"
+                style="@style/button_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mathematics" />
+
+            <Button
+                android:id="@+id/s4_btn_OS_id"
+                style="@style/button_theme"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Operating Systems" />
+
+            <Button
+                android:id="@+id/s4_btn_DSL_id"
+                style="@style/button_theme"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Digital Systems Lab" />
+
+            <Button
+                android:id="@+id/s4_btn_PDD_id"
+                style="@style/button_theme"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Principles of Database Design" />
+
+            <Button
+                android:id="@+id/s4_btn_COAA_id"
+                style="@style/button_theme"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Computer Organization and Architecture" />
+
+            <Button
+                android:id="@+id/s4_btn_OPDAP_id"
+                style="@style/button_theme"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Object Oriented Design and Programming" />
+
+            <Button
+                android:id="@+id/s4_btn_FAOSSL_id"
+                style="@style/button_theme"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Free and Open Source Software Lab" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

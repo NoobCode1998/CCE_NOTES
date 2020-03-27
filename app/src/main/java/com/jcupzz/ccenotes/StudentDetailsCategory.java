@@ -37,31 +37,31 @@ btn_s2.setOnClickListener(new View.OnClickListener() {
     public void onClick(View v) {
         Intent s2 = new Intent(StudentDetailsCategory.this,STwoSubjects.class);
         startActivity(s2);
-        i=0;
+        i=2;
     }
 });
         btn_s4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-i=1;
-                Intent s24 = new Intent(StudentDetailsCategory.this,StudentBranchCategory.class);
-                startActivity(s24);
+i=4;
+                Intent s4 = new Intent(StudentDetailsCategory.this,SFourSubjects.class);
+                startActivity(s4);
             }
         });
         btn_s6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-    i=2;
-                Intent s26 = new Intent(StudentDetailsCategory.this,StudentBranchCategory.class);
-                startActivity(s26);
+    i=6;
+                Intent s6 = new Intent(StudentDetailsCategory.this,SSixSubjects.class);
+                startActivity(s6);
             }
         });
         btn_s8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-        i=3;
-                Intent s28 = new Intent(StudentDetailsCategory.this,StudentBranchCategory.class);
-                startActivity(s28);
+        i=8;
+                Intent s8 = new Intent(StudentDetailsCategory.this,SEightSubjects.class);
+                startActivity(s8);
             }
         });
 
