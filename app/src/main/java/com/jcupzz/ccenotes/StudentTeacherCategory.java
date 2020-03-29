@@ -1,3 +1,7 @@
+
+
+
+
 package com.jcupzz.ccenotes;
 
 import androidx.appcompat.app.ActionBar;
@@ -9,7 +13,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class StudentTeacherCategory extends AppCompatActivity {
-ImageButton stu_btn,teachers_btn;
+    ImageButton stu_btn,teachers_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +34,7 @@ ImageButton stu_btn,teachers_btn;
         teachers_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StudentTeacherCategory.this,TeacherDetailsCategory.class);
+                Intent intent = new Intent(StudentTeacherCategory.this,Login.class);
                 startActivity(intent);
             }
         });
