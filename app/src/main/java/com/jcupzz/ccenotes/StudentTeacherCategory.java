@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 
 public class StudentTeacherCategory extends AppCompatActivity {
 ImageButton stu_btn,teachers_btn;
+public static int stc_integer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +25,7 @@ ImageButton stu_btn,teachers_btn;
             public void onClick(View v) {
                 Intent intent = new Intent(StudentTeacherCategory.this,StudentDetailsCategory.class);
                 startActivity(intent);
+                stc_integer=1;
             }
         });
 
@@ -32,6 +34,7 @@ ImageButton stu_btn,teachers_btn;
             public void onClick(View v) {
                 Intent intent = new Intent(StudentTeacherCategory.this,TeacherDetailsCategory.class);
                 startActivity(intent);
+                stc_integer=2;
             }
         });
 

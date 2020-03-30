@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +30,7 @@ public class StudentDetailsCategory extends AppCompatActivity  {
         btn_s4 = findViewById(R.id.img_id_s4);
         btn_s6 = findViewById(R.id.img_id_s6);
         btn_s8 = findViewById(R.id.img_id_s8);
+
 
 
 
@@ -67,6 +69,9 @@ i=4;
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_gradient));
+
+
+
 
 
     }

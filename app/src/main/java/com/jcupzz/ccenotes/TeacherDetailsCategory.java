@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+
+
+
 public class TeacherDetailsCategory extends AppCompatActivity {
 Button confirm_btn;
     @Override
@@ -19,8 +22,9 @@ confirm_btn = findViewById(R.id.confirm_button);
 confirm_btn.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        Intent intr = new Intent(TeacherDetailsCategory.this,UploadActivity.class);
+        Intent intr = new Intent(TeacherDetailsCategory.this,StudentDetailsCategory.class);
         startActivity(intr);
+
     }
 });
 

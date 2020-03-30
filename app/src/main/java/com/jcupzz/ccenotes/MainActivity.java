@@ -33,12 +33,33 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<DownModel> downModelArrayList = new ArrayList<>();
     MyAdapter myAdapter;
     public static String s4s6s8var;
-
+Button upload_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        upload_btn = findViewById(R.id.upload_btn_id);
+
+        if(StudentTeacherCategory.stc_integer==1)
+        {
+            upload_btn.setVisibility(View.GONE);
+        }
+        else if(StudentTeacherCategory.stc_integer==2)
+        {
+            upload_btn.setVisibility(View.VISIBLE);
+        }
+        else{
+            //do nothing
+        }
+
+        upload_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this,"Not invisible",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         //s4
         if(i==4&&j==1){

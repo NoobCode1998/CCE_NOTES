@@ -6,25 +6,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class STwoSubjects extends AppCompatActivity implements View.OnClickListener{
 public static String var;
-    public static Button s2_btn_physics;
-    public static Button s2_btn_chemistry;
-    public static Button s2_btn_graphics;
-    public static Button s2_btn_basics_of_mechanics;
-    public static Button s2_btn_basics_of_electrical;
-    public static Button s2_btn_basics_of_electronics;
-    public static Button s2_btn_mathematics;
-    public static Button s2_btn_cs;
-    public static Button s2_btn_basics_of_mechanical;
-    public static Button s2_btn_basics_of_civil;
-
+     Button s2_btn_physics;
+     Button s2_btn_chemistry;
+     Button s2_btn_graphics;
+     Button s2_btn_basics_of_mechanics;
+     Button s2_btn_basics_of_electrical;
+     Button s2_btn_basics_of_electronics;
+     Button s2_btn_mathematics;
+     Button s2_btn_cs;
+     Button s2_btn_basics_of_mechanical;
+     Button s2_btn_basics_of_civil;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stwo_subjects);
+
+
 
         //start variables
          s2_btn_physics = findViewById(R.id.s2_btn_physics);
