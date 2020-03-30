@@ -21,6 +21,7 @@ public static String var;
      Button s2_btn_cs;
      Button s2_btn_basics_of_mechanical;
      Button s2_btn_basics_of_civil;
+     public static int s2_u_n;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

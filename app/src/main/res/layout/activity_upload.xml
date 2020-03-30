@@ -3,14 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/splash_gradient"
     android:layout_height="match_parent"
     tools:context=".UploadActivity">
 
     <EditText
         android:id="@+id/txt_pdfName"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="200dp"
+        android:background="#fff"
+        android:hint="Enter the Name of the File"
+        android:inputType="textAutoComplete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,9 +26,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="100dp"
-        android:text="UPLOAD"
+        android:text="@string/upload"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_pdfName" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

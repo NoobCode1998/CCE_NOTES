@@ -57,7 +57,8 @@ Button upload_btn;
         upload_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this,"Not invisible",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this,UploadActivity.class);
+                startActivity(intent);
             }
         });
 

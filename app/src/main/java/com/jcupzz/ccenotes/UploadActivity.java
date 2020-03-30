@@ -31,6 +31,8 @@ import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.jcupzz.ccenotes.StudentDetailsCategory.i;
+
 public class UploadActivity extends AppCompatActivity {
 
 EditText editPDFName;
@@ -38,8 +40,10 @@ Button btn_upload;
 StorageReference storageReference;
 DatabaseReference databaseReference;
 FirebaseFirestore db;
+public static String Upload_Collection_Str;
 public static String Subject_Module_Name;
  public static String Subject_Module_Link;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +56,13 @@ btn_upload = findViewById(R.id.btn_upload);
 storageReference = FirebaseStorage.getInstance().getReference();
 //databaseReference = FirebaseDatabase.getInstance().getReference("uploads");
 db = FirebaseFirestore.getInstance();
+
+
+
+
+
+
+
 
 btn_upload.setOnClickListener(new View.OnClickListener() {
     @Override
@@ -108,25 +119,43 @@ reference.putFile(data)
 
 
 
+if(i==2) {
 
+    db.collection(STwoSubjects.var)
+            .add(downModel)
+            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                @Override
+                public void onSuccess(DocumentReference documentReference) {
+                    // Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
 
-                db.collection("Mechanical")
-                        .add(downModel)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                // Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
+                }
+            })
+            .addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    // Log.w(TAG, "Error adding document", e);
+                }
+            });
 
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                // Log.w(TAG, "Error adding document", e);
-                            }
-                        });
+}
+else if(i==4||i==6||i==8)
+{
+    db.collection(MainActivity.s4s6s8var)
+            .add(downModel)
+            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                @Override
+                public void onSuccess(DocumentReference documentReference) {
+                    // Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
 
-
+                }
+            })
+            .addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    // Log.w(TAG, "Error adding document", e);
+                }
+            });
+}
 
 
 
