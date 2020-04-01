@@ -39,7 +39,9 @@ mCardView.setOnCreateContextMenuListener(this);
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        menu.add(getAdapterPosition(),121,0,"Delete");
-        ve = mName.getText().toString();
+        if(StudentTeacherCategory.stc_integer==2) {
+            menu.add(getAdapterPosition(), 121, 0, "Delete");
+            ve = mName.getText().toString();
+        }
     }
 }
