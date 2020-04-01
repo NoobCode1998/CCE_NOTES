@@ -2,45 +2,59 @@ package com.jcupzz.ccenotes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.DownloadManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentReference;
+
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.model.Document;
+
+import com.google.firebase.storage.StorageReference;
 
 import static com.jcupzz.ccenotes.SFourSubjects.j;
 import static com.jcupzz.ccenotes.StudentDetailsCategory.i;
 
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
     FirebaseFirestore db;
     RecyclerView mRecyclerView;
     ArrayList<DownModel> downModelArrayList = new ArrayList<>();
     MyAdapter myAdapter;
+    StorageReference storageReference;
     public static String s4s6s8var;
 Button upload_btn;
+String dif;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         upload_btn = findViewById(R.id.upload_btn_id);
+
 
         if(StudentTeacherCategory.stc_integer==1)
         {
@@ -88,47 +102,47 @@ Button upload_btn;
 
         //s6
         if(i==6&&j==1){
-            s4s6s8var = "Physics";
+            s4s6s8var = "S6_CSE_CD";
         }
         if(i==6&&j==2){
-            s4s6s8var = "S4_CSE_OS";
+            s4s6s8var = "S6_CSE_CN";
         }
         if(i==6&&j==3){
-            s4s6s8var = "S4_CSE_DSL";
+            s4s6s8var = "S6_CSE_WT";
         }
         if(i==6&&j==4){
-            s4s6s8var = "S4_CSE_PDD";
+            s4s6s8var = "S6_CSE_POM";
         }
         if(i==6&&j==5){
-            s4s6s8var = "S4_CSE_COAA";
+            s4s6s8var = "S6_CSE_DAAOA";
         }
         if(i==6&&j==6){
-            s4s6s8var = "S4_CSE_OPDAP";
-        }
-        if(i==6&&j==7){
-            s4s6s8var = "S4_CSE_FAOSSL";
+            s4s6s8var = "S6_CSE_SEAPM";
         }
 
 
         //s8
         if(i==8&&j==1){
-            s4s6s8var = "Chemistry";
+            s4s6s8var = "S8_CSE_DM";
         }
         if(i==8&&j==2){
-            s4s6s8var = "S4_CSE_OS";
+            s4s6s8var = "S8_CSE_FST";
         }
         if(i==8&&j==3){
-            s4s6s8var = "S4_CSE_DSL";
+            s4s6s8var = "S8_CSE_CC";
         }
         if(i==8&&j==4){
-            s4s6s8var = "S4_CSE_PDD";
+            s4s6s8var = "S8_CSE_ES";
         }
         if(i==8&&j==5){
-            s4s6s8var = "S4_CSE_COAA";
+            s4s6s8var = "S8_CSE_AI";
         }
         if(i==8&&j==6){
-            s4s6s8var = "S4_CSE_OPDAP";
+            s4s6s8var = "S8_CSE_POIS";
         }
+
+
+
 
 
 
@@ -142,7 +156,23 @@ Button upload_btn;
             dataFromFirebases6s4s8();
         }
 
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private void dataFromFirebase() {
         if(downModelArrayList.size()>0)
@@ -174,11 +204,12 @@ db.collection(STwoSubjects.var)
                     public void onFailure(@NonNull Exception e) {
                         Toast.makeText(MainActivity.this, "Error ;-.-;", Toast.LENGTH_SHORT).show();
                     }
-                })
-        ;
+                });
+
 
 
     }
+
 
     private void setUpFB(){
         db=FirebaseFirestore.getInstance();
@@ -222,6 +253,78 @@ db.collection(STwoSubjects.var)
                     }
                 })
         ;
+
+
+    }
+
+    @Override
+    public boolean onContextItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case 121:
+
+               deletefirebasefirestore();
+                return true;
+        }
+        return super.onContextItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        if (id == R.id.aboutus_id) {
+
+            Intent myIntent = new Intent(MainActivity.this,  AboutUs.class);
+
+            MainActivity.this.startActivity(myIntent);
+
+
+            return true;
+        }
+        if(id==R.id.open_downloads_id){
+            Intent i = new Intent();
+            i.setAction(DownloadManager.ACTION_VIEW_DOWNLOADS);
+            startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    public void deletefirebasefirestore() {
+        if(i==2) {
+            dif=STwoSubjects.var;
+        }
+        else if(i==4||i==6||i==8)
+        {
+            dif=s4s6s8var;
+        }
+
+
+        db.collection(dif).document(MyViewHolder.ve)
+                .delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(MainActivity.this,"Successfully deleted "+MyViewHolder.ve,Toast.LENGTH_SHORT).show();
+                        Intent intent = getIntent();
+                        finish();
+                        startActivity(intent);
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        //Log.w(TAG, "Error deleting document", e);
+                    }
+                });
+
 
 
     }

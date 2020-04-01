@@ -18,7 +18,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentDetailsCategory extends AppCompatActivity  {
+public class StudentDetailsCategory extends MainActivity  {
     public static Button btn_s2,btn_s4,btn_s6,btn_s8;
     public static int i;
     @Override

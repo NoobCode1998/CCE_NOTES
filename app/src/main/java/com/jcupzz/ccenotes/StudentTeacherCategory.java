@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class StudentTeacherCategory extends AppCompatActivity {
+public class StudentTeacherCategory extends MainActivity {
 ImageButton stu_btn,teachers_btn;
 public static int stc_integer;
     @Override

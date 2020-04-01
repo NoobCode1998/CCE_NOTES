@@ -33,7 +33,7 @@ import java.util.Map;
 
 import static com.jcupzz.ccenotes.StudentDetailsCategory.i;
 
-public class UploadActivity extends AppCompatActivity {
+public class UploadActivity extends MainActivity {
 
 EditText editPDFName;
 Button btn_upload;
@@ -43,7 +43,8 @@ FirebaseFirestore db;
 public static String Upload_Collection_Str;
 public static String Subject_Module_Name;
  public static String Subject_Module_Link;
-
+    public static String STRING_NAME_OF_PDF;
+    public static String d_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +69,7 @@ btn_upload.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
         selectPDFFile();
+
     }
 });
 
@@ -100,10 +102,10 @@ btn_upload.setOnClickListener(new View.OnClickListener() {
     private void uploadPDFFile(final Uri data) {
 
         final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setTitle("Uploading!!!");
+        progressDialog.setTitle("Uploading!!! ");
         progressDialog.show();
-
-final StorageReference reference = storageReference.child("uploads/"+System.currentTimeMillis()+".pdf");
+        STRING_NAME_OF_PDF=editPDFName.getText().toString();
+ StorageReference reference = storageReference.child("uploads/"+STRING_NAME_OF_PDF+".pdf");
 reference.putFile(data)
         .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -114,6 +116,7 @@ reference.putFile(data)
                 while (!uri.isComplete());
                     Uri url = uri.getResult();
                 Subject_Module_Name = editPDFName.getText().toString();
+                //Toast.makeText(UploadActivity.this, "uploads/"+STRING_NAME_OF_PDF+".pdf", Toast.LENGTH_SHORT).show();
                 Subject_Module_Link = url.toString();
                 DownModel downModel = new DownModel(Subject_Module_Name,Subject_Module_Link);
 
@@ -122,18 +125,19 @@ reference.putFile(data)
 if(i==2) {
 
     db.collection(STwoSubjects.var)
-            .add(downModel)
-            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            .document(STRING_NAME_OF_PDF).set(downModel)
+            .addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
-                public void onSuccess(DocumentReference documentReference) {
-                    // Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
-
+                public void onSuccess(Void aVoid) {
+                    Toast.makeText(getApplicationContext(),"Successfully Uploaded!!!",Toast.LENGTH_SHORT).show();
+                    Intent intentd = new Intent(UploadActivity.this,MainActivity.class);
+                    startActivity(intentd);
                 }
             })
             .addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    // Log.w(TAG, "Error adding document", e);
+
                 }
             });
 
@@ -141,26 +145,28 @@ if(i==2) {
 else if(i==4||i==6||i==8)
 {
     db.collection(MainActivity.s4s6s8var)
-            .add(downModel)
-            .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            .document(STRING_NAME_OF_PDF).set(downModel)
+            .addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
-                public void onSuccess(DocumentReference documentReference) {
-                    // Log.d(TAG, "DocumentSnapshot written with ID: " + documentReference.getId());
-
+                public void onSuccess(Void aVoid) {
+                    Toast.makeText(getApplicationContext(),"Successfully Uploaded!!!",Toast.LENGTH_SHORT).show();
+                    Intent intentz = new Intent(UploadActivity.this,MainActivity.class);
+                    startActivity(intentz);
                 }
             })
             .addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    // Log.w(TAG, "Error adding document", e);
+
                 }
             });
+
 }
 
 
 
 
-                Toast.makeText(UploadActivity.this,Subject_Module_Link,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(UploadActivity.this,Subject_Module_Link,Toast.LENGTH_SHORT).show();
                progressDialog.dismiss();
             }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {

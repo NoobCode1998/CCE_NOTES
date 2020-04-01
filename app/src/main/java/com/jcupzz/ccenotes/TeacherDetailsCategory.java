@@ -10,7 +10,7 @@ import android.widget.Button;
 
 
 
-public class TeacherDetailsCategory extends AppCompatActivity {
+public class TeacherDetailsCategory extends MainActivity {
 Button confirm_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
