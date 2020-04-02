@@ -55,7 +55,7 @@ public class Login extends AppCompatActivity {
 
         if(user!=null){
             finish();
-            startActivity(new Intent(Login.this,StudentTeacherCategory.class));
+            startActivity(new Intent(Login.this,StudentDetailsCategory.class));
         }
 
 
@@ -86,7 +86,7 @@ public class Login extends AppCompatActivity {
 //            if(counter==0){
 //                login.setEnabled(false);
 //            }
-        firebaseAuth.signInWithEmailAndPassword(userName,userPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+         firebaseAuth.signInWithEmailAndPassword(userName,userPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
