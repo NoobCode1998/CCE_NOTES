@@ -34,7 +34,6 @@ public static int stc_integer;
             public void onClick(View v) {
                 Intent intent = new Intent(StudentTeacherCategory.this,TeacherDetailsCategory.class);
                 startActivity(intent);
-                stc_integer=2;
             }
         });
 

@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UploadActivity"></activity>
+        <activity android:name=".Login"></activity>
+        <activity android:name=".UploadActivity" />
         <activity android:name=".AboutUs" />
         <activity android:name=".SEightSubjects" />
         <activity android:name=".SSixSubjects" />
