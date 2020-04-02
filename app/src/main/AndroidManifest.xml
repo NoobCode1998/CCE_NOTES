@@ -25,9 +25,6 @@
         <activity android:name=".SFourSubjects" />
         <activity android:name=".STwoSubjects" />
         <activity
-            android:name=".TeacherDetailsCategory"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".StudentDetailsCategory"
             android:screenOrientation="portrait" />
         <activity

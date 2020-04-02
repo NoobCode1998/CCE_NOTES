@@ -55,7 +55,7 @@ public class Login extends AppCompatActivity {
 
         if(user!=null){
             finish();
-            startActivity(new Intent(Login.this,UploadActivity.class));
+            startActivity(new Intent(Login.this,StudentTeacherCategory.class));
         }
 
 
@@ -92,7 +92,7 @@ public class Login extends AppCompatActivity {
 
                 if(task.isSuccessful()){
                     Toast.makeText(Login.this,"Login succesfull",Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(Login.this,UploadActivity.class));
+                    startActivity(new Intent(Login.this,StudentDetailsCategory.class));
                 }else{
                     Toast.makeText(Login.this,"Login Failed",Toast.LENGTH_SHORT).show();
                     counter--;
