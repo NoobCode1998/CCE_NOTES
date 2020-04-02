@@ -32,7 +32,7 @@ public static int stc_integer;
         teachers_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StudentTeacherCategory.this,StudentDetailsCategory.class);
+                Intent intent = new Intent(StudentTeacherCategory.this,Register.class);
                 startActivity(intent);
             }
         });
