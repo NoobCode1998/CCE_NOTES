@@ -7,7 +7,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DownloadManager;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,10 +30,13 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import com.google.firebase.storage.StorageReference;
 
+import static com.jcupzz.ccenotes.MyViewHolder.he;
+import static com.jcupzz.ccenotes.MyViewHolder.l;
 import static com.jcupzz.ccenotes.SFourSubjects.j;
 import static com.jcupzz.ccenotes.StudentDetailsCategory.i;
 
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
     MyAdapter myAdapter;
     StorageReference storageReference;
     public static String s4s6s8var;
-Button upload_btn;
+    public static String path;
+
+    Button upload_btn;
 String dif;
 
 
@@ -51,6 +59,10 @@ String dif;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if(isNetworkConnected()==false)
+        {
+            Toast.makeText(getApplicationContext(),"You need internet to function",Toast.LENGTH_LONG).show();
+        }
 
 
         upload_btn = findViewById(R.id.upload_btn_id);
@@ -160,18 +172,9 @@ String dif;
 
     }
 
+    public void opens() {
 
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
     private void dataFromFirebase() {
@@ -233,6 +236,7 @@ db.collection(STwoSubjects.var)
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
                         for(DocumentSnapshot documentSnapshot: task.getResult()) {
 
                             DownModel downModel= new DownModel(documentSnapshot.getString("name"),
@@ -240,7 +244,6 @@ db.collection(STwoSubjects.var)
                             downModelArrayList.add(downModel);
 
                         }
-
                         myAdapter= new MyAdapter(MainActivity.this,downModelArrayList);
                         mRecyclerView.setAdapter(myAdapter);
                     }
@@ -327,6 +330,11 @@ db.collection(STwoSubjects.var)
 
 
 
+    }
+    private boolean isNetworkConnected() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
 
 

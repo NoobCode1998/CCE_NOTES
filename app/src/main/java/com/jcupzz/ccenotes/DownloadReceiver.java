@@ -15,5 +15,6 @@ public class DownloadReceiver extends BroadcastReceiver {
             dm.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(dm);
         }
+
     }
 }

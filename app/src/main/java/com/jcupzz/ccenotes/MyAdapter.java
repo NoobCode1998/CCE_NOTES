@@ -26,9 +26,10 @@ import static android.os.Environment.DIRECTORY_DOWNLOADS;
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     MainActivity mainActivity;
     ArrayList<DownModel> downModels;
-FirebaseFirestore firestore;
-public static String sss;
-    public static int inr=0;
+    FirebaseFirestore firestore;
+    public static String sss;
+    public static int inr = 0;
+
     public MyAdapter(MainActivity mainActivity, ArrayList<DownModel> downModels) {
         this.mainActivity = mainActivity;
         this.downModels = downModels;
@@ -48,9 +49,12 @@ public static String sss;
                 getSystemService(Context.DOWNLOAD_SERVICE);
         Uri uri = Uri.parse(url);
         DownloadManager.Request request = new DownloadManager.Request(uri);
+
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setDestinationInExternalFilesDir(context, destinationDirectory, fileName + fileExtension);
-        //request.setDestinationInExternalPublicDir(context,destinationDirectory,fileName + fileExtension);
+        Toast.makeText(context, DIRECTORY_DOWNLOADS+"/"+fileName+fileExtension, Toast.LENGTH_SHORT).show();
+        //request.setDestinationInExternalPublicDir(context,destinationDirectory,fileName+fileExtension);
+        sss = fileName+fileExtension;
         downloadmanager.enqueue(request);
 
     }
@@ -63,12 +67,11 @@ public static String sss;
         myViewHolder.mDownload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    downloadFile(myViewHolder.mName.getContext(), downModels.get(i).getName(), ".pdf", DIRECTORY_DOWNLOADS, downModels.get(i).getLink());
+                downloadFile(myViewHolder.mName.getContext(), downModels.get(i).getName(), ".pdf", null, downModels.get(i).getLink());
             }
 
 
         });
-
 
 
     }
@@ -78,9 +81,6 @@ public static String sss;
 
         return downModels.size();
     }
-
-
-
 
 
 }

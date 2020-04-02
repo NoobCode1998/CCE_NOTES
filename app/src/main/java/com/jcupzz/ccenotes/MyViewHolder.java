@@ -1,5 +1,10 @@
 package com.jcupzz.ccenotes;
 
+import android.app.DownloadManager;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Environment;
 import android.util.Log;
 import android.view.ActionMode;
 import android.view.ContextMenu;
@@ -18,12 +23,19 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.StorageReference;
 
-public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener {
+import java.io.File;
 
+import static android.os.Environment.DIRECTORY_DOWNLOADS;
+
+public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener, View.OnClickListener {
+    public static String he;
 public static String ve;
+public static int l=0;
+    public static String path;
+
 TextView mName;
     Button mDownload;
-
+Context context;
     CardView mCardView;
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -32,7 +44,7 @@ TextView mName;
         mDownload = itemView.findViewById(R.id.down);
 mCardView= itemView.findViewById(R.id.cardview_id);
 mCardView.setOnCreateContextMenuListener(this);
-
+mCardView.setOnClickListener(this);
 
 
 }
@@ -42,6 +54,23 @@ mCardView.setOnCreateContextMenuListener(this);
         if(StudentTeacherCategory.stc_integer==2) {
             menu.add(getAdapterPosition(), 121, 0, "Delete");
             ve = mName.getText().toString();
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        he = mName.getText().toString();
+        //path= DIRECTORY_DOWNLOADS+"/"+he+".pdf";
+        path = "/storage/self/primary/Android/data/com.jcupzz.ccenotes/files/"+he+".pdf";
+        File file = new File(path);
+        Toast.makeText(v.getContext(),path,Toast.LENGTH_SHORT).show();
+
+        if (file.exists()) {
+            Toast.makeText(v.getContext(),"You have Already Downloaded this File!",Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Toast.makeText(v.getContext(),"This file is not found in your Storage!",Toast.LENGTH_SHORT).show();
         }
     }
 }
