@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
@@ -68,7 +70,16 @@ db = FirebaseFirestore.getInstance();
 btn_upload.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        selectPDFFile();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // User is signed in
+            Toast.makeText(getApplicationContext(),"Logged in success therefore redirecting",Toast.LENGTH_SHORT).show();
+            selectPDFFile();
+        } else {
+            // No user is signed in
+            Toast.makeText(getApplicationContext(),"Please Log in first",Toast.LENGTH_SHORT).show();
+        }
+        //selectPDFFile();
 
     }
 });

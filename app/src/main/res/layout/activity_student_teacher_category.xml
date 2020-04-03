@@ -8,7 +8,7 @@
     tools:context=".StudentTeacherCategory">
 
     <ImageButton
-        android:id="@+id/student_category_btn"
+        android:id="@+id/student_btn"
         android:layout_width="152dp"
         android:layout_height="157dp"
         android:adjustViewBounds="true"
@@ -32,6 +32,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/student_category_btn"
+        app:layout_constraintTop_toBottomOf="@+id/student_btn"
         app:layout_constraintVertical_bias="0.269" />
+
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teacher_category_btn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
