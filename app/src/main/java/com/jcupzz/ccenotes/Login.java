@@ -92,6 +92,7 @@ public class Login extends AppCompatActivity {
 
                 if(task.isSuccessful()){
                     Toast.makeText(Login.this,"Login succesfull",Toast.LENGTH_SHORT).show();
+                    StudentTeacherCategory.stc_integer=2;
                     startActivity(new Intent(Login.this,StudentDetailsCategory.class));
                 }else{
                     Toast.makeText(Login.this,"Login Failed",Toast.LENGTH_SHORT).show();

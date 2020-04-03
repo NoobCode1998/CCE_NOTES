@@ -68,7 +68,7 @@ public class Register extends AppCompatActivity {
                 String password = mPassword.getText().toString().trim();
                 final String Access    = mAccess.getText().toString();
 
-                if(Access.equals("A1B2C4")){
+                if(!(Access.equals("A1B2C4"))){
                     mAccess.setError("the access code entered isnt for staff");
                     return;
                 }
@@ -101,6 +101,7 @@ public class Register extends AppCompatActivity {
 
                             Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
                             userID = fAuth.getCurrentUser().getUid();
+
 
 
                             startActivity(new Intent(getApplicationContext(),Login.class));
