@@ -225,7 +225,7 @@ db.collection(STwoSubjects.var)
     }
 
     private void dataFromFirebases6s4s8() {
-        if(downModelArrayList.size()>0)
+      if(downModelArrayList.size()>0)
             downModelArrayList.clear();
 
         //db=FirebaseFirestore.getInstance();

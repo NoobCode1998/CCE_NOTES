@@ -29,12 +29,12 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
 
-    private EditText name;
-    private EditText pass;
-    private Button login;
-    private int counter=5;
-    private TextView wrAtmt;
-    private FirebaseAuth firebaseAuth;
+    public EditText name;
+    public EditText pass;
+    public Button login;
+    public int counter=5;
+    public TextView wrAtmt;
+    public FirebaseAuth firebaseAuth;
 
     public Login() {
     }
@@ -92,10 +92,12 @@ public class Login extends AppCompatActivity {
 
                 if(task.isSuccessful()){
                     Toast.makeText(Login.this,"Login succesfull",Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(Login.this,StudentDetailsCategory.class));
+                    startActivity(new Intent(Login.this,StudentTeacherCategory.class));
                 }else{
                     Toast.makeText(Login.this,"Login Failed",Toast.LENGTH_SHORT).show();
                     counter--;
+                    name.setText(null);
+                    pass.setText(null);
                     wrAtmt.setText("Number of attempts remaining :" + String.valueOf(counter));
                     if(counter==0)
                     {
@@ -105,6 +107,10 @@ public class Login extends AppCompatActivity {
 
             }
         });
+
+
+
+
 
 
     }
