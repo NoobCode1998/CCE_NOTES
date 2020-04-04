@@ -35,7 +35,7 @@ import java.util.Map;
 
 import static com.jcupzz.ccenotes.StudentDetailsCategory.i;
 
-public class UploadActivity extends MainActivity {
+public class UploadActivity extends AppCompatActivity {
 
 EditText editPDFName;
 Button btn_upload;
