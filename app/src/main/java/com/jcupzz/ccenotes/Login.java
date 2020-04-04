@@ -64,6 +64,9 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validate(name.getText().toString().trim(),pass.getText().toString().trim());
+
+
+                finish();
             }
         });
 

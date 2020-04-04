@@ -66,6 +66,7 @@ public class StudentTeacherCategory extends MainActivity {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 stc_integer = 1;
+                finish();
 
             }
         });
