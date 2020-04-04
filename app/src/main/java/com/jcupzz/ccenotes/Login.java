@@ -22,10 +22,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class Login extends AppCompatActivity {
 
@@ -35,6 +40,9 @@ public class Login extends AppCompatActivity {
     private int counter=5;
     private TextView wrAtmt;
     private FirebaseAuth firebaseAuth;
+    String userID;
+
+    FirebaseFirestore db =FirebaseFirestore.getInstance();
 
     public Login() {
     }
@@ -55,7 +63,7 @@ public class Login extends AppCompatActivity {
 
         if(user!=null){
             finish();
-            startActivity(new Intent(Login.this,StudentTeacherCategory.class));
+            startActivity(new Intent(Login.this,StudentDetailsCategory.class));
         }
 
 
@@ -64,9 +72,6 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 validate(name.getText().toString().trim(),pass.getText().toString().trim());
-
-
-                finish();
             }
         });
 
@@ -89,12 +94,13 @@ public class Login extends AppCompatActivity {
 //            if(counter==0){
 //                login.setEnabled(false);
 //            }
-        firebaseAuth.signInWithEmailAndPassword(userName,userPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+         firebaseAuth.signInWithEmailAndPassword(userName,userPass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if(task.isSuccessful()){
                     Toast.makeText(Login.this,"Login succesfull",Toast.LENGTH_SHORT).show();
+                    StudentTeacherCategory.stc_integer=2;
                     startActivity(new Intent(Login.this,StudentDetailsCategory.class));
                 }else{
                     Toast.makeText(Login.this,"Login Failed",Toast.LENGTH_SHORT).show();

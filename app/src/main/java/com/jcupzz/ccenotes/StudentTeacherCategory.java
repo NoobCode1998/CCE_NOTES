@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class StudentTeacherCategory extends MainActivity {
     ImageButton stu_btn, teachers_btn;
-    Button log_btn;
+    static Button log_btn;
     public static int stc_integer=1;
 
     @Override
@@ -39,7 +39,7 @@ public class StudentTeacherCategory extends MainActivity {
         stu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(StudentTeacherCategory.this, StudentDetailsCategory.class);
+                Intent intent = new Intent(StudentTeacherCategory.this, Register.class);
                 startActivity(intent);
                 stc_integer = 1;
             }
@@ -66,6 +66,7 @@ public class StudentTeacherCategory extends MainActivity {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 stc_integer = 1;
+                log_btn.setVisibility(View.GONE);
                 finish();
 
             }
