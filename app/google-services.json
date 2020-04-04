@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "349230683298",
+    "firebase_url": "https://ccenotes-8ad1f.firebaseio.com",
+    "project_id": "ccenotes-8ad1f",
+    "storage_bucket": "ccenotes-8ad1f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349230683298:android:b3dffde3cb133e4260f3fb",
+        "android_client_info": {
+          "package_name": "com.jcupzz.ccenotes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349230683298-on6hcdktf5tt8fmv5tq2pjbr01evesq2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQmoywyq3FT6WAJU7-BRSY8nb2RfzOxFs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349230683298-on6hcdktf5tt8fmv5tq2pjbr01evesq2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
