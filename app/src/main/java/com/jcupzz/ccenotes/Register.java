@@ -45,6 +45,7 @@ public class Register extends AppCompatActivity {
     ProgressBar progressBar;
     String userID;
 
+
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     //FirebaseDatabase db = FirebaseDatabase.getInstance();
     String staff="-1";
@@ -90,7 +91,7 @@ public class Register extends AppCompatActivity {
                         staff="1";
                         break;
                         default:
-                            mAccess.setError("the access code entered isnt for staff");
+                            mAccess.setError("invalid access code");
                             return;
 
                 }
@@ -137,7 +138,11 @@ public class Register extends AppCompatActivity {
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
-                                            Toast.makeText(getApplicationContext(),"Successfully Uploaded!!!",Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getApplicationContext(),"Successfully Registered",Toast.LENGTH_SHORT).show();
+                                            if(staff.equals("1"))
+                                                Toast.makeText(getApplicationContext(),"Registered as staff",Toast.LENGTH_SHORT).show();
+                                            else
+                                                Toast.makeText(getApplicationContext(),"Registered as student",Toast.LENGTH_SHORT).show();
                                            // Intent intentd = new Intent(UploadActivity.this,MainActivity.class);
                                            // startActivity(intentd);
                                         }
@@ -145,6 +150,7 @@ public class Register extends AppCompatActivity {
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
+                                            Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
 
                                         }
                                     });
