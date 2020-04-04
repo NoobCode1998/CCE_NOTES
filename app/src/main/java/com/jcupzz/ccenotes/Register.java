@@ -26,8 +26,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,6 +44,11 @@ public class Register extends AppCompatActivity {
     FirebaseAuth fAuth;
     ProgressBar progressBar;
     String userID;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    //FirebaseDatabase db = FirebaseDatabase.getInstance();
+    String staff="-1";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,13 +74,27 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final String email = mEmail.getText().toString().trim();
-                String password = mPassword.getText().toString().trim();
+                final String password = mPassword.getText().toString().trim();
                 final String Access    = mAccess.getText().toString();
 
-                if(!(Access.equals("A1B2C4"))){
-                    mAccess.setError("the access code entered isnt for staff");
-                    return;
+//                if(!((Access.equals("A1B2C4"))||Access.equals("12345"))){
+//                    mAccess.setError("the access code entered isnt for staff");
+//                    staff="1";
+//                    return;
+//                }
+                switch (Access){
+                    case "1234":
+                        staff="0";
+                        break;
+                    case "7894":
+                        staff="1";
+                        break;
+                        default:
+                            mAccess.setError("the access code entered isnt for staff");
+                            return;
+
                 }
+
 
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Email is Required.");
@@ -101,6 +124,36 @@ public class Register extends AppCompatActivity {
 
                             Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
                             userID = fAuth.getCurrentUser().getUid();
+
+
+
+
+                            /////cp
+
+                            role roles = new role(userID,email,staff,password);
+
+                            db.collection("roles")
+                                    .document(email).set(roles)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Toast.makeText(getApplicationContext(),"Successfully Uploaded!!!",Toast.LENGTH_SHORT).show();
+                                           // Intent intentd = new Intent(UploadActivity.this,MainActivity.class);
+                                           // startActivity(intentd);
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+
+                                        }
+                                    });
+
+
+
+                            /////cp
+
+
 
 
 
