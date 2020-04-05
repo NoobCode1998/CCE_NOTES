@@ -2,6 +2,7 @@ package com.jcupzz.ccenotes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 
@@ -44,6 +45,8 @@ public class Register extends AppCompatActivity {
     FirebaseAuth fAuth;
     ProgressBar progressBar;
     String userID, staffAccess, StdAccess;
+    static int prevChoice;
+    SharedPreferences sharedpreferences;
 
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -101,18 +104,26 @@ public class Register extends AppCompatActivity {
                 });
 
 
-                switch (Access) {
-                    case "1234":
-                        staff = "0";
-                        break;
-                    case "7894":
-                        staff = "1";
-                        break;
-                    default:
-                        mAccess.setError("invalid access code");
-                        return;
+             if(Access.equals(staffAccess)){
+                 staff="1";
+                 if(prevChoice!=1) {
+                     mAccess.setError("Access code is wrong");
+                     return;
+                 }
 
-                }
+             }
+             else if(Access.equals(StdAccess)){
+                 staff="0";
+                 if(prevChoice!=2) {
+                     mAccess.setError("Access code is wrong");
+                     return;
+                 }
+             }
+             else{
+
+                 mAccess.setError("Access code is wrong");
+                    return;
+             }
 
 
                 if (TextUtils.isEmpty(email)) {
@@ -154,11 +165,28 @@ public class Register extends AppCompatActivity {
                                         @Override
                                         public void onSuccess(Void aVoid) {
                                             Toast.makeText(getApplicationContext(), "Successfully Registered", Toast.LENGTH_SHORT).show();
-                                            if (staff.equals("1"))
+                                            if (staff.equals("1")) {
+                                                //user shared preferecnce start
+
+                                                sharedpreferences = getSharedPreferences("",
+                                                        MODE_PRIVATE);
+                                                SharedPreferences.Editor myEdit = sharedpreferences.edit();
+                                                myEdit.putString("name",userID);
+                                                myEdit.putString("pass",password);
+                                                myEdit.putString("staff",staff);
+                                                myEdit.commit();
+
+
+                                                //user shared preference
                                                 Toast.makeText(getApplicationContext(), "Registered as staff", Toast.LENGTH_SHORT).show();
-                                            else
+                                            }else {
+                                                SharedPreferences.Editor myEdit = sharedpreferences.edit();
+                                                myEdit.putString("name",userID);
+                                                myEdit.putString("pass",password);
+                                                myEdit.putString("staff",staff);
+                                                myEdit.commit();
                                                 Toast.makeText(getApplicationContext(), "Registered as student", Toast.LENGTH_SHORT).show();
-                                            // Intent intentd = new Intent(UploadActivity.this,MainActivity.class);
+                                            } // Intent intentd = new Intent(UploadActivity.this,MainActivity.class);
                                             // startActivity(intentd);
                                         }
                                     })

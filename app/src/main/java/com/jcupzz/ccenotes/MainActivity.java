@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -49,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
     public static String path;
 
     Button upload_btn;
-String dif;
+    String dif;
+    SharedPreferences sharedpreferences;
 
 
 
@@ -68,11 +70,19 @@ String dif;
         upload_btn = findViewById(R.id.upload_btn_id);
 
 
-        if(StudentTeacherCategory.stc_integer==1)
+        //sharedpreferences=getSharedPreferences();
+        //StudentTeacherCategory.stc_integer=0;
+
+        sharedpreferences=getSharedPreferences("loginSave",MODE_PRIVATE);
+        SharedPreferences.Editor myEdit = sharedpreferences.edit();
+        String priv=sharedpreferences.getString("staff","");
+        StudentTeacherCategory.stc_integer=priv.equals("1")?1:0;
+
+        if(StudentTeacherCategory.stc_integer==0)
         {
             upload_btn.setVisibility(View.GONE);
         }
-        else if(StudentTeacherCategory.stc_integer==2)
+        else if(StudentTeacherCategory.stc_integer==1)
         {
             upload_btn.setVisibility(View.VISIBLE);
         }
