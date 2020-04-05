@@ -32,6 +32,7 @@ import static android.os.Environment.DIRECTORY_DOWNLOADS;
 public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener, View.OnClickListener {
     public static String he;
 public static String ve;
+    public static String ha;
 public static int l=0;
     public static String path;
 
@@ -40,6 +41,8 @@ TextView mName;
     CardView mCardView;
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
+
+
 
         mName = itemView.findViewById(R.id.name);
         mDownload = itemView.findViewById(R.id.down);
@@ -60,20 +63,20 @@ mCardView.setOnClickListener(this);
 
     @Override
     public void onClick(View v) {
-        he = mName.getText().toString();
-        //path= DIRECTORY_DOWNLOADS+"/"+he+".pdf";
-        path = "/storage/self/primary/Android/data/com.jcupzz.ccenotes/files/"+he+".pdf";
-        File file = new File(path);
-        Toast.makeText(v.getContext(),path,Toast.LENGTH_SHORT).show();
+        if(v.getId()==R.id.cardview_id) {
+            he = mName.getText().toString();
+            path = "/storage/self/primary/Android/data/com.jcupzz.ccenotes/files/" + he + ".pdf";
+            File file = new File(path);
+            //Toast.makeText(v.getContext(),path,Toast.LENGTH_SHORT).show();
+            if (file.exists()) {
+                Toast.makeText(v.getContext(), "Opening "+he+".pdf "+"!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(v.getContext(), PdfViewer.class);
+                v.getContext().startActivity(intent);
+            } else {
+                Toast.makeText(v.getContext(), "This file is not found in your Storage!", Toast.LENGTH_SHORT).show();
+            }
+        }
 
-        if (file.exists()) {
-            Toast.makeText(v.getContext(),"You have Already Downloaded this File!",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(v.getContext(),PdfViewer.class);
-            v.getContext().startActivity(intent);
-        }
-        else
-        {
-            Toast.makeText(v.getContext(),"This file is not found in your Storage!",Toast.LENGTH_SHORT).show();
-        }
+
     }
 }
