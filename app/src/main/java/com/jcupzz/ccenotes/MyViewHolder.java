@@ -1,5 +1,7 @@
 package com.jcupzz.ccenotes;
 
+import android.app.Activity;
+import android.app.Application;
 import android.app.DownloadManager;
 import android.content.Context;
 import android.content.Intent;
@@ -35,7 +37,6 @@ public static int l=0;
 
 TextView mName;
     Button mDownload;
-Context context;
     CardView mCardView;
     public MyViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -67,6 +68,8 @@ mCardView.setOnClickListener(this);
 
         if (file.exists()) {
             Toast.makeText(v.getContext(),"You have Already Downloaded this File!",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(v.getContext(),PdfViewer.class);
+            v.getContext().startActivity(intent);
         }
         else
         {

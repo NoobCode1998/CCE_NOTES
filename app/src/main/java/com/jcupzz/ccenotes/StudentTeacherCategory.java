@@ -158,6 +158,7 @@ public class StudentTeacherCategory extends MainActivity {
                 myEdit.commit();
 
                 log_btn.setVisibility(View.GONE);
+                finish();
 
             }
         });

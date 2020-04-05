@@ -37,6 +37,10 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.2.0-alpha05'
+    implementation 'com.scwang.wave:MultiWaveHeader:1.0.0-alpha-1'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+
+
 
 
 }
