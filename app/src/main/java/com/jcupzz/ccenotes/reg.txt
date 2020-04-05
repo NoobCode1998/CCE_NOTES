@@ -19,7 +19,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.firebase.firestore.DocumentSnapshot;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -31,6 +30,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
@@ -54,23 +54,10 @@ public class Register extends AppCompatActivity {
     String staff = "-1";
 
 
-
-
-// SharedPreferences  sharedpreferences = getSharedPreferences("AccessCode",
-//            MODE_PRIVATE);
-//    SharedPreferences.Editor myEdit = sharedpreferences.edit();
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
-//        staffAccess = sharedpreferences.getString("staffAccess", "");
-//        StdAccess = sharedpreferences.getString("StdAccess", "");
 
         mEmail = findViewById(R.id.Email);
         mPassword = findViewById(R.id.password);
@@ -79,16 +66,29 @@ public class Register extends AppCompatActivity {
         mLoginBtn = findViewById(R.id.createText);
 
         fAuth = FirebaseAuth.getInstance();
-        progressBar = findViewById(R.id.progressBar);
-
-
+//        progressBar = findViewById(R.id.progressBar);
+//        DocumentReference docRef = db.collection("roles").document("AccessCode");
+//        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                if (task.isSuccessful()) {
+//                    DocumentSnapshot document = task.getResult();
+//                    if (document != null) {
+//                        staffAccess = (document.getString("StaffCCE"));
+//                        StdAccess = (document.getString("StudentCCE"));
+//
+//
+//                    }
+//                }
+//            }
+//        });
 
 
 
 
         if (fAuth.getCurrentUser() != null) {
             startActivity(new Intent(getApplicationContext(), StudentDetailsCategory.class));
-            finish();
+           // finish();
         }
 
 
@@ -99,39 +99,32 @@ public class Register extends AppCompatActivity {
                 final String password = mPassword.getText().toString().trim();
                 final String Access = mAccess.getText().toString();
 
-//                if(!((Access.equals("A1B2C4"))||Access.equals("12345"))){
-//                    mAccess.setError("the access code entered isnt for staff");
-//                    staff="1";
-//                    return;
-//                }
-
-                DocumentReference docRef = db.collection("roles").document("AccessCode");
-                docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                        if (task.isSuccessful()) {
-                            DocumentSnapshot document = task.getResult();
-                            if (document != null) {
-                                staffAccess = (document.getString("StaffCCE"));
-                                StdAccess = (document.getString("StudentCCE"));
 
 
-                            }
-                        }
-                    }
-                });
+
+                sharedpreferences = getSharedPreferences("AccessCode", MODE_PRIVATE);
+                SharedPreferences.Editor myEdit = sharedpreferences.edit();
+                staffAccess = sharedpreferences.getString("staffAccess", "");
+                StdAccess = sharedpreferences.getString("StdAccess", "");
+
+              //  Toast.makeText(Register.this, "acess Student"+StdAccess+"\n access teacher"+staffAccess, Toast.LENGTH_SHORT).show();
+
+
 
                 if(Access.equals(staffAccess)){
-                    staff="1";
-                }
-                else if(Access.equals(StdAccess)){
-                    staff="0";
-                }
-                else{
-                    mAccess.setError("Access code is wrong");
-                    return;
-                }
+                 staff="1";
 
+
+             }
+             else if(Access.equals(StdAccess)){
+                 staff="0";
+
+             }
+             else{
+
+                 mAccess.setError("Access code is wrong");
+                    return;
+             }
 
 
                 if (TextUtils.isEmpty(email)) {
@@ -158,6 +151,7 @@ public class Register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
+                            startActivity(new Intent(getApplicationContext(), Login.class));
 
                             Toast.makeText(Register.this, "User Created.", Toast.LENGTH_SHORT).show();
                             userID = fAuth.getCurrentUser().getUid();
@@ -187,6 +181,8 @@ public class Register extends AppCompatActivity {
 
                                                 //user shared preference
                                                 Toast.makeText(getApplicationContext(), "Registered as staff", Toast.LENGTH_SHORT).show();
+                                                startActivity(new Intent(getApplicationContext(), Login.class));
+
                                             }else {
                                                 SharedPreferences.Editor myEdit = sharedpreferences.edit();
                                                 myEdit.putString("name",userID);
@@ -194,6 +190,8 @@ public class Register extends AppCompatActivity {
                                                 myEdit.putString("staff",staff);
                                                 myEdit.commit();
                                                 Toast.makeText(getApplicationContext(), "Registered as student", Toast.LENGTH_SHORT).show();
+                                                startActivity(new Intent(getApplicationContext(), Login.class));
+
                                             } // Intent intentd = new Intent(UploadActivity.this,MainActivity.class);
                                             // startActivity(intentd);
                                         }
@@ -210,9 +208,7 @@ public class Register extends AppCompatActivity {
                             /////cp
 
 
-                            startActivity(new Intent(getApplicationContext(), Login.class));
-                            finish();
-
+                            //startActivity(new Intent(getApplicationContext(), Login.class));
 
                         }else {
                             Toast.makeText(Register.this, "Error ! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -228,7 +224,7 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(), Login.class));
-                //finish();
+                finish();
 
             }
         });

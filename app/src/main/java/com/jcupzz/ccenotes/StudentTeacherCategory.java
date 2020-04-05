@@ -96,6 +96,10 @@ public class StudentTeacherCategory extends MainActivity {
             public void onClick(View v) {
 
 
+                Register.prevChoice = 1;
+                Login.prevChoice = 1;
+
+
                // StorageReference storageReference;
                 sharedpreferences = getSharedPreferences("loginSave", MODE_PRIVATE);
                 SharedPreferences.Editor myEdit = sharedpreferences.edit();

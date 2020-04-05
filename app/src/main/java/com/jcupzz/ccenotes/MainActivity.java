@@ -25,6 +25,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -303,10 +304,32 @@ db.collection(STwoSubjects.var)
 
             return true;
         }
+
         if(id==R.id.open_downloads_id){
             Intent i = new Intent();
             i.setAction(DownloadManager.ACTION_VIEW_DOWNLOADS);
             startActivity(i);
+        }
+
+        if (id == R.id.signOut_id) {
+
+            FirebaseAuth.getInstance().signOut();
+            sharedpreferences = getSharedPreferences("loginSave",
+                    MODE_PRIVATE);
+
+            SharedPreferences.Editor myEdit = sharedpreferences.edit();
+
+            myEdit.putString("name", "");
+            myEdit.putString("pass", "");
+            myEdit.putString("staff", "");
+            myEdit.commit();
+
+            Intent myIntent = new Intent(MainActivity.this,  Register.class);
+
+            MainActivity.this.startActivity(myIntent);
+
+
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
