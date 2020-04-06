@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/background"
+    android:background="#FFFFCC"
     android:layout_height="match_parent"
     tools:context=".UploadActivity">
 
@@ -14,7 +14,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="200dp"
-        android:background="@drawable/gradient_button"
+        android:background="@drawable/sscategorybackground"
         android:hint="@string/enter_the_name_of_the_file"
         android:inputType="textAutoComplete"
         android:maxWidth="500dp"
@@ -35,7 +35,7 @@
         android:layout_marginBottom="100dp"
         android:text="@string/upload"
         android:textColor="#fff"
-        android:background="@drawable/gradient_button"
+        android:background="@drawable/upload_btn_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
