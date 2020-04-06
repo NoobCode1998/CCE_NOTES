@@ -35,6 +35,7 @@ public class SplashScreen extends AppCompatActivity {
 
 
 
+//
         DocumentReference docRef = db.collection("roles").document("AccessCode");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -42,14 +43,8 @@ public class SplashScreen extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     DocumentSnapshot document = task.getResult();
                     if (document != null) {
-                        String staffAccess = (document.getString("StaffCCE"));
-                        String StdAccess = (document.getString("StudentCCE"));
-                        SharedPreferences  sharedpreferences = getSharedPreferences("AccessCode",
-                                MODE_PRIVATE);
-                        SharedPreferences.Editor myEdit = sharedpreferences.edit();
-                        myEdit.putString("staffAccess",staffAccess);
-                        myEdit.putString("StdAccess",StdAccess);
-                        myEdit.commit();
+                        Register.staffAccess = (document.getString("StaffCCE"));
+                        Register.StdAccess = (document.getString("StudentCCE"));
 
 
                     }
