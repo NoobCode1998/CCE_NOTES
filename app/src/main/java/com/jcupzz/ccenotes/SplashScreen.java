@@ -35,7 +35,7 @@ public class SplashScreen extends AppCompatActivity {
 
 
 
-        DocumentReference docRef = db.collection("roles").document("AccessCode");
+    /*   DocumentReference docRef = db.collection("roles").document("AccessCode");
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -55,7 +55,7 @@ public class SplashScreen extends AppCompatActivity {
                     }
                 }
             }
-        });
+        });*/
 
 
         super.onCreate(savedInstanceState);
