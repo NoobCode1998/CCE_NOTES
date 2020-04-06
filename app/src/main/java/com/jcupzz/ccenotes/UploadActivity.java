@@ -46,7 +46,7 @@ public static String Upload_Collection_Str;
 public static String Subject_Module_Name;
  public static String Subject_Module_Link;
     public static String STRING_NAME_OF_PDF;
-    public static String d_id;
+    int text;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,14 +69,15 @@ db = FirebaseFirestore.getInstance();
 btn_upload.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
+        text = editPDFName.getText().length();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
+        if (user != null&&text>0) {
             // User is signed in
             Toast.makeText(getApplicationContext(),"Logged in success therefore redirecting",Toast.LENGTH_SHORT).show();
             selectPDFFile();
         } else {
             // No user is signed in
-            Toast.makeText(getApplicationContext(),"Please Log in first",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Please enter the filename!",Toast.LENGTH_SHORT).show();
         }
         //selectPDFFile();
 
