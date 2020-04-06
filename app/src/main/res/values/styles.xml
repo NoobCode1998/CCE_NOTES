@@ -31,7 +31,7 @@
     <item name="android:textColor">#fff</item>
     <item name="android:textAlignment">center</item>
     <item name="android:textSize">50sp</item>
-    <item name="android:background">@drawable/sscategorybackground</item>
+    <item name="android:background">#c6d97f</item>
     <item name="android:textStyle">bold</item>
 <item name="android:fontFamily">sans-serif-black</item>
     <item name="android:layout_margin">5dp</item>
