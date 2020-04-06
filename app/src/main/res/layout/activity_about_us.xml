@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,12 +8,31 @@
     android:background="@drawable/splash_gradient"
     tools:context=".AboutUs">
 
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/wave_header"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <com.scwang.wave.MultiWaveHeader
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/wave_footer"
+        android:scaleY="-1"
+        android:layout_alignParentBottom="true"/>
+
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="331dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,8 +43,14 @@
         android:id="@+id/textView2"
         android:layout_width="356dp"
         android:layout_height="37dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="265dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="428dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="266dp"
         android:shadowColor="@android:color/black"
         android:shadowDx="12"
         android:shadowDy="12"
@@ -45,7 +71,14 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="540dp"
         android:text="App Developed and Maintained by\nCODE App Development Team from\nChrist College of Engineering"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -58,6 +91,14 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="478dp"
+        android:layout_marginEnd="255dp"
+        android:layout_marginBottom="226dp"
         android:text="Developers"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -72,10 +113,18 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="527dp"
+        android:layout_marginEnd="241dp"
+        android:layout_marginBottom="180dp"
         android:text="Jacob Ranjit"
+        android:textAlignment="center"
         android:textSize="18sp"
         android:typeface="monospace"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.15"
@@ -85,23 +134,39 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="175dp"
+        android:layout_height="34dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="564dp"
+        android:layout_marginEnd="218dp"
+        android:layout_marginBottom="133dp"
         android:text="Cyril Paul"
         android:textAlignment="center"
         android:textSize="18sp"
         android:typeface="monospace"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.050000012" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="598dp"
+        android:layout_marginEnd="247dp"
+        android:layout_marginBottom="109dp"
         android:text="Simon Nelse"
         android:textAlignment="center"
         android:textSize="18sp"
@@ -113,15 +178,5 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:layout_constraintVertical_bias="0.0" />
 
-    <com.scwang.wave.MultiWaveHeader
-        android:id="@+id/wave_footer"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:scaleY="-1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

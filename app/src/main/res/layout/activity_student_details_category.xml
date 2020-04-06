@@ -5,7 +5,7 @@
     android:id="@+id/submit"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="#FFFFCC"
     android:orientation="horizontal"
     tools:context=".StudentDetailsCategory">
 
@@ -30,7 +30,10 @@
             android:layout_row="0"
             android:layout_column="0"
             android:layout_gravity="center"
-            android:text="@string/s2" />
+            android:text="@string/s2"
+
+
+           />
 
         <Button
             android:id="@+id/img_id_s4"
