@@ -14,9 +14,12 @@
     <style name="button_theme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:textColor">#fff</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:background">@drawable/gradient_button</item>
+        <item name="android:background">#03a9f4</item>
         <item name="android:layout_margin">5dp</item>
         <item name="android:radius">100dp</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:translationZ">10dp</item>
+        <item name="android:stateListAnimator">@null</item>
 
     </style>
 
@@ -29,6 +32,7 @@
     </style>
 <style name="category_btn_theme" parent="Theme.AppCompat.Light.DarkActionBar">
     <item name="android:textColor">#fff</item>
+
     <item name="android:textAlignment">center</item>
     <item name="android:textSize">50sp</item>
     <item name="android:background">#c6d97f</item>

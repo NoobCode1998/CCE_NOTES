@@ -1,6 +1,7 @@
 package com.jcupzz.ccenotes;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DownloadManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
@@ -312,6 +314,16 @@ db.collection(STwoSubjects.var)
         }
 
         if (id == R.id.signOut_id) {
+            //warning
+
+
+
+            //warning
+
+
+
+
+
 
             FirebaseAuth.getInstance().signOut();
             sharedpreferences = getSharedPreferences("loginSave",
@@ -323,6 +335,7 @@ db.collection(STwoSubjects.var)
             myEdit.putString("pass", "");
             myEdit.putString("staff", "");
             myEdit.commit();
+            finish();
 
             Intent myIntent = new Intent(MainActivity.this,  Register.class);
 
