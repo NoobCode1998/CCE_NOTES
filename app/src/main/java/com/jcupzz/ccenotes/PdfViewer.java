@@ -11,15 +11,16 @@ import java.io.File;
 
 public class PdfViewer extends AppCompatActivity {
     PDFView pdfView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdf_viewer);
 
+        pdfView = findViewById(R.id.pdfViewer);
 
-pdfView = findViewById(R.id.pdfViewer);
 
-File file = new File(MyViewHolder.path);
+        File file = new File(MyViewHolder.path);
         pdfView.fromFile(file)
                 .pages(0, 2, 1, 3, 3, 3) // all pages are displayed by default
                 .enableSwipe(true) // allows to block changing pages using swipe

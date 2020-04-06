@@ -3,8 +3,7 @@
     <corners android:radius="1000dp">
 
     </corners>
-    <gradient
-        android:startColor="#43cea2"
-        android:endColor="#185a9d"
-        android:angle="45"/>
+    <solid android:color="@color/btn_round_clr">
+
+    </solid>
 </shape>

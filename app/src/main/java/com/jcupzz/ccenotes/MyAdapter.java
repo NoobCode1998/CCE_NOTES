@@ -26,9 +26,8 @@ import static android.os.Environment.DIRECTORY_DOWNLOADS;
 public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
     MainActivity mainActivity;
     ArrayList<DownModel> downModels;
-    FirebaseFirestore firestore;
-    public static String sss;
-    public static int inr = 0;
+
+
 
     public MyAdapter(MainActivity mainActivity, ArrayList<DownModel> downModels) {
         this.mainActivity = mainActivity;
@@ -52,9 +51,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
         request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
         request.setDestinationInExternalFilesDir(context, destinationDirectory, fileName + fileExtension);
-        Toast.makeText(context, DIRECTORY_DOWNLOADS+"/"+fileName+fileExtension, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context,"Downloading!!!", Toast.LENGTH_SHORT).show();
         //request.setDestinationInExternalPublicDir(context,destinationDirectory,fileName+fileExtension);
-        sss = fileName+fileExtension;
         downloadmanager.enqueue(request);
 
     }
@@ -67,7 +65,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
         myViewHolder.mDownload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                downloadFile(myViewHolder.mName.getContext(), downModels.get(i).getName(), ".pdf", null, downModels.get(i).getLink());
+                    downloadFile(myViewHolder.mName.getContext(), downModels.get(i).getName(), ".pdf", null, downModels.get(i).getLink());
             }
 
 

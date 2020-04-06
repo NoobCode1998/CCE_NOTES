@@ -57,7 +57,6 @@ btn_upload = findViewById(R.id.btn_upload);
 
 
 storageReference = FirebaseStorage.getInstance().getReference();
-//databaseReference = FirebaseDatabase.getInstance().getReference("uploads");
 db = FirebaseFirestore.getInstance();
 
 
@@ -177,14 +176,13 @@ else if(i==4||i==6||i==8)
 
 
 
-                //Toast.makeText(UploadActivity.this,Subject_Module_Link,Toast.LENGTH_SHORT).show();
                progressDialog.dismiss();
             }
         }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
     @Override
     public void onProgress(@NonNull UploadTask.TaskSnapshot taskSnapshot) {
 double progress = (100.0*taskSnapshot.getBytesTransferred())/taskSnapshot.getTotalByteCount();
-progressDialog.setMessage("Uploaded"+(int)progress+"%");
+progressDialog.setMessage("Uploaded "+(int)progress+"%");
     }
 });
 
