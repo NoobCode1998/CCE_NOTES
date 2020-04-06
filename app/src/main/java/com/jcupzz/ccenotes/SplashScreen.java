@@ -1,3 +1,5 @@
+
+
 package com.jcupzz.ccenotes;
 
 import androidx.annotation.NonNull;
@@ -79,3 +81,35 @@ public class SplashScreen extends AppCompatActivity {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

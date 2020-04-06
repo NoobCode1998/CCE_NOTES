@@ -54,19 +54,6 @@ public class Register extends AppCompatActivity {
     String staff = "-1";
 
 
-// SharedPreferences  sharedpreferences = getSharedPreferences("AccessCode",
-//            MODE_PRIVATE);
-//    SharedPreferences.Editor myEdit = sharedpreferences.edit();
-//    String staffAccess = sharedpreferences.getString("staffAccess", "");
-//    String StdAccess = sharedpreferences.getString("StdAccess", "");
-
-
-
-
-
-// SharedPreferences  sharedpreferences = getSharedPreferences("AccessCode",
-//            MODE_PRIVATE);
-//    SharedPreferences.Editor myEdit = sharedpreferences.edit();
 
 
 
@@ -106,7 +93,7 @@ public class Register extends AppCompatActivity {
                 final String Access = mAccess.getText().toString();
 
 
-          //      Toast.makeText(Register.this, "students"+StdAccess+"\n staff "+staffAccess, Toast.LENGTH_SHORT).show();
+                //      Toast.makeText(Register.this, "students"+StdAccess+"\n staff "+staffAccess, Toast.LENGTH_SHORT).show();
 
 //                if(!((Access.equals("A1B2C4"))||Access.equals("12345"))){
 //                    mAccess.setError("the access code entered isnt for staff");
@@ -195,13 +182,15 @@ public class Register extends AppCompatActivity {
 
 
                                                 startActivity(new Intent(getApplicationContext(), StudentDetailsCategory.class));
-                                                finish();
+                                                //finish();
                                                 //finish();
 
 
                                                 //user shared preference
                                                 Toast.makeText(getApplicationContext(), "Registered as staff", Toast.LENGTH_SHORT).show();
                                             }else {
+                                                sharedpreferences = getSharedPreferences("loginSave",
+                                                        MODE_PRIVATE);
                                                 SharedPreferences.Editor myEdit = sharedpreferences.edit();
                                                 myEdit.putString("name",userID);
                                                 myEdit.putString("pass",password);
@@ -210,7 +199,7 @@ public class Register extends AppCompatActivity {
 
 
                                                 startActivity(new Intent(getApplicationContext(), StudentDetailsCategory.class));
-                                                finish();
+                                                //finish();
 
                                                 Toast.makeText(getApplicationContext(), "Registered as student", Toast.LENGTH_SHORT).show();
                                             }
@@ -252,3 +241,17 @@ public class Register extends AppCompatActivity {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
