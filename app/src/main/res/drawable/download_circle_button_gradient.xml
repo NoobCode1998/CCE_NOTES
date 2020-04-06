@@ -4,12 +4,21 @@
         <shape android:shape="oval">
             <gradient android:startColor="@color/start" android:endColor="@color/end">
 
+
             </gradient>
+
+
         </shape>
+
+
     </item>
     <item android:state_pressed="true">
         <shape android:shape="oval">
             <solid android:color="#000000"/>
         </shape>
     </item>
+
+
+
+
 </selector>
