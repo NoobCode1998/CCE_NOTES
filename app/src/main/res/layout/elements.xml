@@ -47,7 +47,7 @@
 
                         android:fontFamily="sans-serif-black"
                         android:text="@string/names"
-                        android:textColor="#ffffff"
+                        android:textColor="@color/textclr"
                         android:textSize="20sp" />
 
                 </LinearLayout>
